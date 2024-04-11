@@ -40,12 +40,12 @@ public class Controller10 {
     public void method2(Model model) {
         var data = new ArrayList<Map>();
         data.add(Map.of("son", 7,
-                "lee", 19,                      //${myAttr[0].son} -> 7
-                "kim", 30));                        //${myAttr[0].lee} -> 19
+                "lee", 19,                           //${myAttr[0].son} -> 7
+                "kim", 30));                         //${myAttr[0].lee} -> 19
         //${myAttr[0].kim} -> 30
-        data.add(Map.of("korea", "seoul",
-                "japan", "tokyo",
-                "미국", "워싱턴"));
+        data.add(Map.of("korea", "seoul",                    //${myAttr[1].korea} ->seoul
+                "japan", "tokyo",                                //${myAttr[1].japan} ->tokyo
+                "미국", "워싱턴"));                                //${myAttr[1]["미국"]}->워싱턴
 
         model.addAttribute("myAttr", data);
     }
@@ -58,7 +58,7 @@ public class Controller10 {
         data.put("강인", "파리");
         data.put("jh", "샌프란시스코");
 
-        model.addAttribute("myAttr1", data);
+        model.addAttribute("myAttr1", data);                  // ${myAttr1["흥민"]}
         model.addAttribute("myAttr2", "흥민");
         model.addAttribute("myAttr3", "민재");
         model.addAttribute("jh", "강인");
@@ -88,6 +88,7 @@ public class Controller10 {
 
     @RequestMapping("sub6")
     public void method6(Model model) {
+
         var data = new ArrayList<MyBean101>();
 
         MyBean101 e1 = new MyBean101();
