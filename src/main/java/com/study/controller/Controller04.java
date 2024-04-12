@@ -17,8 +17,9 @@ public class Controller04 {
     // /main4/sub1?city&country
     // /main4/sub1?city=seoul&country=korea
     @RequestMapping("sub1")
+    //  todo:리퀘스트 파라미터 없으니까 파라미터 없어도 동작,있어도 동작 ("sub1",params = {"country", "city"}이렇게 되있었으면 파라미터값이 있어야 동작
     public void sub1(WebRequest request) {
-        System.out.println("Controller04.sub1");
+        System.out.println("Controller04.sub1");    //todo : WebRequest 인터페이스타입의 request// WebRequest 인터페이스에 getParameterNames 메소드를 사용
         Iterator<String> names = request.getParameterNames();
 
         while (names.hasNext()) {
